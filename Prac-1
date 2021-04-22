@@ -1,0 +1,510 @@
+#import numpy
+#import re
+#import math
+'''
+howmany = int(input(""))
+container = []
+
+for i in range(howmany):
+    x = int(input(""))
+    container.insert(0,x)
+container.sort(reverse=True)
+
+for j in range(howmany):
+    print(container[j])
+'''
+'''
+Student_Point = int(input(""))
+
+if 100 >= Student_Point >= 80:
+    print("A")
+elif 80 > Student_Point >= 75:
+    print("B+")
+elif 75 > Student_Point >= 70:
+    print("B")
+elif 70 > Student_Point >= 65:
+    print("C+")
+elif 65 > Student_Point >= 60:
+    print("C")
+elif 60 > Student_Point >= 55:
+    print("D+")
+elif 55 > Student_Point >= 50:
+    print("D")
+elif 0 <= Student_Point < 50:
+    print("F")
+elif Student_Point < 0:
+    print("Error : Value must be greater than or equal to 0.")
+elif Student_Point > 100:
+    print("Error : Value must be less than or equal to 100.")
+
+'''
+'''
+howmany = int(input())
+container = []
+for i in range(howmany):
+    name = input("")
+    year = int(input(""))
+    gender = input("")
+    age = ("(age : x)").replace("x",str((2017 - year)))
+    container.insert(0,[name, age, gender])
+container.reverse()
+print("--Customers Information--")
+for j in range(howmany):
+    print(container[j][0], container[j][1])
+'''
+'''
+x = input("")
+container = x.split("+")
+container_new = []
+for i in container:
+    i = int(i)
+    container_new.insert(0,i)
+container_new.sort()
+lis = "+".join(map(str,container_new))
+print(lis'''
+'''
+inp_1 = input("")
+inp_2 = input("")
+
+x = inp_1.split()
+y = inp_2.split()
+con1 = list(map(int, x))
+con2 = list(map(int, y))
+container = [con1, con2]
+
+ans = []
+for i in range(len(con1)):
+    y = container[0][i]+container[1][i]
+    ans.insert(0,y)
+
+if len(con1) == len(con2) and ans[2] <= 32548:
+    ans.reverse()
+    ans = " ".join(map(str, ans))
+    print(ans)
+else:
+    print("Invalid")
+'''
+'''
+height = int(input(""))
+if height <= 2:
+    print("Box's height must be more than 2")
+else:
+    print("#"*height)
+
+    for i in range(height - 2):
+        print("#", " "*(height-4), "#")
+
+    print("#"*height)
+'''
+'''
+word = input("")
+word.split()
+num = word.count(";")
+print(num)
+'''
+'''
+bas = str(input(""))
+bas = bas.split()
+#container = []
+def check_in(value, storage):
+    for i in value:
+        if i not in storage:
+            storage.insert(0,i)
+    bas.reverse()
+
+b = bas.index("B:")
+c = bas.index("C:")
+basa = bas[:b]
+basb = bas[b:c]
+basc = bas[c:]
+stoa = []
+stob = []
+stoc = []
+check_in(basa,stoa)
+check_in(basb,stob)
+check_in(basc,stoc)
+basa = len(stoa)
+basb = len(stob)
+basc = len(stoc)
+if (basa > basb) and (basa > basc):
+    print("A")
+elif (basb > basa) and (basb > basc):
+    print("B")
+elif (basc > basa) and (basc > basb):
+    print("C")
+'''
+
+'''
+word = input("")
+container = list(word)
+container1 = []
+for i,v in enumerate(container):
+    if i % 2 == 1 % 2:
+        x = v.upper()
+        container1.insert(0,x)
+    else:
+        y = v.lower()
+        container1.insert(0,y)
+container1.reverse()
+ans = "".join(map(str, container1))
+print(ans)
+'''
+'''
+A = int(input(""))
+B = int(input(""))
+if A > B :
+    print("A")
+elif A == B :
+    print("AB")
+else:
+    print("B")
+'''
+'''
+nop = int(input(""))
+point = input("")
+container = point.split(",")
+list1 = list(map(int, container))
+suma = 0
+
+for j in list1:
+    suma = suma + j
+ans = float(suma/ nop)
+fomatted_ans = "{:.2f}".format(ans)
+print(fomatted_ans)
+'''
+'''
+word = input("")
+container = list(word)
+print(container)
+con1 = []
+for i in container:
+    if i.isupper() == True:
+        i.lower()
+        con1.append(i)
+    elif i == " ":
+        con1.append(" ")
+    elif i.islower() == True:
+        i.upper()
+        con1.append(i)
+ans = "".join(map(str, con1))
+print(con1)
+print(ans)
+'''
+'''
+word = input("")
+container = list(word)
+print(container)
+upper = 0
+lower = 0
+for i in container:
+    if i.isupper() == True:
+        upper += 1
+    elif i.islower() == True:
+        lower +=1
+print("UPPER:"+str(upper)
+print("LOWER:"+str(lower))
+'''
+'''
+x = input("")
+n, m, k, A = map(int, x.split())  #k = a1 A = d
+goal = 1234
+
+day = (m-n)+1
+ans = day/2*(2*k +(day-1)*A)
+q_left = goal - ans
+
+if q_left < 0:
+    print("YES")
+elif q_left  >= 0:
+    print(int(q_left))
+'''
+'''
+n = int(input())
+ans = n/2 * (1+n)
+print(int(ans))
+'''
+'''
+one = input("")
+two = input("")
+three = input("")
+container = []
+if "GUITAR" in one:
+    container.append(one.split(","))
+elif "GUITAR" in two:
+    container.append(two.split(","))
+elif "GUITAR" in three:
+    container.append(three.split(","))
+print(container)
+ans = []
+for i in container:
+    if i.isalpha() == True:
+        ans.append(i)
+ans = "".join(map(str, ans))
+print("GUITAR:"+ans)
+'''
+'''
+x = int(input(""))
+def multi(one, two):
+    return one * two
+
+for i in range(2, x+1):
+    print("สูตรคูณแม่ที่", i)
+    for j in range(12):
+        k = multi(i,j)
+        print(i, "X", j ,"=", k )
+'''
+'''
+digit = int(input(""))
+times = 2**digit
+container = []
+for i in range(times):
+        x = int(bin(i)[2:])
+        x_new = ("{0:0=2d}").replace("2", str(digit)).format(x)
+        container.append(str(x_new))
+ans = ", ".join(map(str, container))
+print("["+ans+"]")
+'''
+'''
+amount = int(input(""))
+container = []
+for i in range(amount):
+    x = input("")
+    container.insert(1,x)
+container.split()
+new_container = set(container)
+
+#ans = "".join(map(str, container))
+print(new_container)
+'''
+'''
+x = input("")
+con1 = x.split()
+container = []
+con2 = []
+for j in con1:
+    if j.isalpha() == False:
+        if j != (":"):
+            con2.append(j)
+
+con3 = list(map(int, con2))
+for i in con3:
+    y = chr(i)
+    container.append(y)
+ans = "".join(map(str, container))
+print(ans)
+'''
+'''
+first_num = int(input(""))
+sec_num = int(input(""))
+counter = 0
+for i in range(first_num, (sec_num+1)):
+    x = list(str(i))
+    print(x)
+    for j in x:
+        if j == "9":
+            counter += 1
+print(counter)
+'''
+'''
+x = int(input(""))
+
+def fac(y):
+    if y == 0:
+        return 1
+    else:
+        return y * fac(y-1)
+
+print(fac(x))
+'''
+'''
+pwd = input("")
+flag = 0
+while True:
+    if len(pwd) < 3 or len(pwd) > 20:
+        flag = -1
+        break
+    elif not re.search("[a-z]", pwd):
+        flag = -1
+        break
+    elif not re.search("[A-Z]", pwd):
+        flag = -1
+        break
+    elif not re.search("[_@$*]", pwd):
+        flag = -1
+        break
+    elif not re.search("[0-9]", pwd):
+        flag = -1
+        break
+    else:
+        flag = 0
+        print("Valid")
+        break
+if flag == -1:
+    print("Invalid")
+'''
+'''
+word = input("")
+new_word = list(word)
+Vowels = ["A", "E", "I", "O", "U", "a", "e", "i", "o", "u",]
+container = []
+for i in new_word:
+    if i not in Vowels:
+        container.append(i)
+ans = "".join(map(str, container))
+print(ans)
+'''
+'''
+a = input("")
+b = input("")
+a.split()
+b.split()
+ans_a =len(list(dict.fromkeys(a)))
+ans_b =len(list(dict.fromkeys(b)))
+
+if ans_a > ans_b:
+  print(ans_a)
+  print(ans_b)
+else:
+  print(ans_b)
+  print(ans_a)
+'''
+'''
+howmany = int(input(""))
+container = []
+for i in range(howmany):
+    product = int(input(""))
+    container.append(product)
+need = int(input(""))
+ans = []
+for j in container:
+    if j == need:
+        x = container.index(j)
+        container.append(x)
+        print(j , x)
+
+lastans = ", ".join(map(str, ans))
+print("Position:", lastans)
+'''
+'''
+howmany = int(input(""))
+container = []
+for i in range(howmany):
+    x = input("")
+    x.split()
+    container.append(x)
+new_list = " ".join(map(str, container))
+ans = list(dict.fromkeys(new_list))
+print(ans)
+'''
+'''
+x = input("input : ")
+if x.isnumeric():
+    print("digit")
+else:
+    if x == "A" or x == "E" or x == "I" or x == "O" or x == "U":
+        print("Vowel")
+    elif x.isupper():
+        print("capital letter")
+'''
+'''
+container_me = []
+container_opp = []
+for i in range(8):
+    x = input("")
+    y = x.replace(".", "")
+    cal = list(y)
+    for j in cal:
+        if j.isupper():
+            container_me.append(j)
+        elif j.islower():
+            container_opp.append(j)
+# dict? --> check in dict --> convert to int --> return
+summa_me = 0
+summa_opp = 0
+value = {
+    "p" : 1,
+    "n" : 3,
+    "b" : 3,
+    "r" : 5,
+    "q" : 9,
+    "k" : 0
+}
+for k in container_me:
+    wtf = k.lower()
+    summa_me += value[wtf]
+for k in container_opp:
+    wtf = k.lower()
+    summa_opp += value[wtf]
+if summa_me - summa_opp != 0:
+    print(summa_me - summa_opp)
+else:
+    print("equal")
+'''
+'''
+x = input("")
+N, M, Y = list(map(int, x.split()))
+B = N / (M-1)
+A = M * B
+print(int(A+Y) , int(B+Y))
+'''
+'''
+text = input("")
+container = list(text)
+print(container)
+height = len(text)
+for i in container:
+    x = container.index(i)
+    for j in range(height-x-1):
+        print(end=" ")
+
+    for j in range((2*(x+1))-1):
+        for k in range(j):
+            print(i, end = "")
+    print("\r")
+'''
+'''
+text = input("")
+container = list(text)
+
+for i in range(0, len(container)):
+    new_con =container[0:i+1]
+    for j in range(len(container) - i-1):
+        print(" ", end = " ")
+
+    for j in range(1, i+1):
+        x = new_con[-j]
+        print(x, end=" ")
+    for j in range(0, i+1):
+        x = new_con[j]
+        print(x, end=" ")
+    print("\r")
+'''
+'''
+def toint(x):
+    y =  [str(x) for x in x]
+    return " ".join(y)
+
+container = []
+x = int(input(""))
+container.append(x)
+while x != 0 :
+    x = int(input(""))
+    if x != 0:
+        container.append(x)
+    else:
+        pass
+check = input("")
+check.lower()
+container.sort()
+if check == "min" :
+    ans = toint(container)
+    print(ans)
+else:
+    container.reverse()
+    ans = toint(container)
+    print(ans)
+
+'''
+
+
+
