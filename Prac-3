@@ -1,0 +1,228 @@
+import math
+import numpy
+#lift v.2
+'''
+inp_con = []
+inp = input("")
+while inp != "-" :
+    inp_con.append(inp)
+    inp = input("")
+
+inp_con = list(map(int, inp_con))
+inp_con.sort()
+
+floor = {
+    1 : "1st",
+    2 : "2nd",
+    3 : "3rd",
+    4 : "4th",
+    5 : "5th"
+}
+
+
+if (inp_con[0] < 1) or (inp_con[-1] > 15):
+    print("Error! Not have this floor")
+else:
+    print("OK! Wait please")
+    print("---------------")
+    print("Lift is arriving!")
+    for i in inp_con:
+        print("---------------")
+        print("Lift is going up!")
+        print("---------------")
+        print("Lift has reached the {} floor!".format(floor[i]))
+'''
+
+#Language to use?
+'''
+container = []
+for i in range(4):
+    x = input("")
+    container.append(x)
+
+lang  = container[0]
+name  = container[1]
+age  = container[2]
+sex  = container[3]
+
+age = int(age)
+if lang == "ENG":
+    if sex == "Girl" or sex == "Women":
+        Pre = "Mrs."
+    else:
+        Pre = "Mr."
+    print("Name", Pre, name)
+    print("Age :", age)
+
+else:
+    if sex == "หญิง":
+        if age > 15 :
+            Pre = "นางสาว"
+        else:
+            Pre = "เด็กหญิง"
+    else:
+        if age > 15 :
+            Pre = "นาย"
+        else:
+            Pre = "เด็กชาย"
+    print("ชื่อ", Pre, name)
+    print("อายุ :", age)
+'''
+
+# animals legs
+'''
+animal = []
+amount = []
+animal_legs = []
+
+counter = 0
+for i in range(3):
+    x = input("")
+    ani , amo = x.split(" ")
+    animal.append(ani)
+    amount.append(amo)
+amount = list(map(int, amount))
+leg = {
+    "Dog" : 4,
+    "Cat" : 4,
+    "Chicken" : 2,
+    "Duck" : 2,
+    "Cow" : 4,
+    "Snake" : 0,
+    "Bird" : 2,
+}
+total = 0
+for i in animal:
+    animal_legs.append(leg[i])
+
+for i in animal_legs:
+    total += i*amount[counter]
+    counter+=1
+print(total)
+'''
+
+#Fake taxi
+'''
+first_inp = input("")
+first_inp = first_inp.replace("-", "")
+first_inp = first_inp.split(" ")
+first_inp = list(map(int, first_inp))
+first_inp.sort()
+second_inp = []
+for i in range(3):
+    x = int(input(""))
+    second_inp.append(x)
+dis = []
+for i in range(3):
+    dist = first_inp[i] + second_inp[i]
+    dis.append(dist)
+for i in range(3):
+    print("Distance{} = {}".format(i+1, dis[i]))
+'''
+#roman num
+'''
+roman = [["M", 1000], ["D", 500], ["C", 100], ["L", 50], ["X", 10], ["V", 5], ["I", 1]]
+
+def roman_cal(x):
+    container = []
+    for i in range(len(roman)):
+        a = x // roman[i][1]
+        if a == 4:
+            container.append(roman[i][0] + roman[i-1][0])
+        elif a == 9:
+            container.append(roman[i][0] + roman[i-2][0])
+        else:
+            [container.append(roman[i][0]) for ch in range(a)]
+        if a != 0:
+            x %= roman[i][1]
+    return "".join(container)
+
+inp = int(input(""))
+ans = roman_cal(inp)
+
+print(ans)
+
+'''
+'''
+class py_solution:
+    def int_to_Roman(self, num):
+        val = [
+            1000, 900, 500, 400,
+            100, 90, 50, 40,
+            10, 9, 5, 4,
+            1
+            ]
+        syb = [
+            "M", "CM", "D", "CD",
+            "C", "XC", "L", "XL",
+            "X", "IX", "V", "IV",
+            "I"
+            ]
+        roman_num = ''
+        i = 0
+        while  num > 0:
+            for _ in range(num // val[i]):
+                roman_num += syb[i]
+                num -= val[i]
+            i += 1
+        return roman_num
+
+inp = int(input(""))
+print(py_solution().int_to_Roman(inp))
+'''
+
+'''
+inp = input("")
+n = 2
+lt = [inp[i: i+2] for i in range(0, len(inp), n)]
+for i , v in enumerate(lt):
+    if v == "pu":
+        lt[i] = "0"
+    elif v == "pe":
+        lt[i] = "1"
+
+def BinaryToDecimal(binary):
+
+    binary1 = binary
+    decimal, i, n = 0, 0, 0
+    while(binary != 0):
+        dec = binary % 10
+        decimal = decimal + dec * pow(2, i)
+        binary = binary//10
+        i += 1
+    return (decimal)
+
+code = ''.join(lt)
+#code = list(map(int, code))
+ans = code.decode("ascii")
+print(code)
+print(ans)
+'''
+inp_A = input("")
+inp_B = input("")
+#Matrix_A = Matrix_A.split("")
+m_A = int(inp_A.split(" ")[0])
+m_B = int(inp_B.split(" ")[0])
+Matrix_A = []
+Matrix_B = []
+for i in range(m_A):
+    x = input("")
+    Matrix_A.append(x)
+
+for i in range(m_B):
+    x = input("")
+    Matrix_B.append(x)
+
+def to_int(x):
+    for i in range(len(x)):
+        for k in range(i):
+            k = int(k)
+    return x
+
+Matrix_A = to_int(Matrix_A)
+Matrix_B = to_int(Matrix_B)
+
+Matrix_A = numpy.array(Matrix_A)
+Matrix_B = numpy.array(Matrix_B)
+
+print (numpy.multiply(Matrix_A, Matrix_B))
