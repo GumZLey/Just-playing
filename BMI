@@ -1,0 +1,24 @@
+height = float(input("What's your height(m)? : "))
+weight = float(input("What's your weight? : "))
+
+
+def bmi_calculating(height,weight):
+    return weight/(height)**2
+
+container = (bmi_calculating(height,weight))
+BBMI = "{:.1f}".format(container)
+BMI = int(round(bmi_calculating(height,weight)))
+print("Your BMI is :", BBMI)
+print("Your BMI (round) is :", BMI)
+
+if BMI >= 30:
+    print("You're so fking fat, Stop eating")
+elif 30 > BMI >= 25:
+    print("You're fat, don't eat too much")
+elif 17 > BMI >= 24:
+    print("You're Normal, that's nice")
+elif BMI <= 18:
+    print("You're so fking thin Go eat something!")
+else:
+    print("What's wrong bitch")
+
