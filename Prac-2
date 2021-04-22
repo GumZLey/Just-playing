@@ -1,0 +1,657 @@
+import re
+
+# from 100000 to 1
+'''
+x = input("")
+container = list(x)
+newcon = list(map(int, container))
+ans = sum(newcon)
+while len(str(ans)) != 1:
+    ans = sum(newcon)
+    ans = str(ans)
+    newcon = list(map(int, ans))
+print(ans)
+'''
+
+#Leap year
+'''
+x = int(input(""))
+if x % 4 ==0 :
+    if x % 100 == 0:
+        if x % 400 == 0:
+            print("Leap Year")
+        else:
+            print("Not a Leap Year")
+    else:
+        print("Leap Year")
+else:
+  print("Not a Leap Year")
+  '''
+'''
+for i in range(1, 6):
+
+    for j in range(6 - i -1):
+        print(end= " ")
+
+    for j in range(i):
+        print("$", end=" ")
+    print("\r")
+'''
+
+# index of item
+'''
+num = int(input(""))
+container = []
+ind_con = []
+for i in range(num):
+    item = input()
+    container.append(item)
+look = input("")
+counter = 0
+for j in container:
+    counter = int(counter)
+    counter += 1
+    if j == look:
+        counter = str(counter)
+        ind_con.append(counter)
+
+ans = ",".join(ind_con)
+print("Position:", ans)
+'''
+
+# ATM code
+'''
+code = input("")
+container = re.split("(\d+)", code)
+suma = 0
+for i in container:
+    if i.isnumeric() :
+        i = int(i)
+        suma += i
+print(suma)
+'''
+
+# Catagory
+'''
+look = int(input(""))
+cat = int(input(""))
+container = []
+for i in range(cat):
+    cata = input("")
+    container.append(cata)
+
+for j in range(len(container)):
+    catago = container[j].split(" ")
+    catago[0] = int(catago[0])
+    catago[1] = int(catago[1])
+    if catago[0] <= look <= catago[1]:
+        print(catago[2])
+'''
+
+# Christmas tree
+'''
+x = int(input(""))
+counter = 0
+for k in range(1, x+1):
+    for i in range(k+1):
+
+        for j in range(x - i):
+            counter+= 1
+            print(end = " ")
+
+        for j in range((2*(i+1)) -1):
+            print("*", end = "")
+        print("\r")
+
+print(" "*x + "|")
+print("="*(x)+"V"+"="*(x))
+'''
+
+# NORMALIZATION
+'''
+m = int(input(""))
+n = int(input(""))
+container = []
+
+for i in range(m*n):
+    y = float(input(""))
+    container.append(y)
+consort = container.copy()
+consort.sort()
+
+def norm(x, min_x, max_x):
+    return (x - min_x) / (max_x - min_x)
+
+ans_con = []
+norm = lambda x, min_x, max_x : (x - min_x) / (max_x - min_x)
+
+for i in container:
+    ans_norm = norm(i , consort[0], consort[(m*n)-1])
+    ans_norm = "%1.4f" % ans_norm
+    ans_con.append(ans_norm)
+
+ans_con = list(map(str, ans_con))
+counter = 0
+for j in range(n):
+
+    for k in range(m):
+        print(ans_con[counter], end = " ")
+        counter += 1
+    print("\r")
+'''
+
+# Lucky day
+'''
+n = int(input(""))
+
+month = {
+    1 : 31,
+    2 : 28,
+    3 : 31,
+    4 : 30,
+    5 : 31,
+    6 : 30,
+    7 : 31,
+    8 : 31,
+    9 : 30,
+    10 : 31,
+    11 : 30,
+    12 : 31,
+}
+day = month[n]
+if n == 1:
+    pre_month = month[12]
+else:
+    pre_month = month[n-1]
+lucky = 0
+
+def cal(i):
+    if i == 1:
+        return (i + pre_month)
+    else:
+        return (i+(i-1))
+
+for i in range(day):
+    con = cal(i)
+    if con % n == 0:
+        lucky +=1
+    else:
+        pass
+print(lucky)
+'''
+
+# sort by len
+'''
+container = []
+num = int(input(""))
+for i in range(num):
+    x = input("")
+    container.append(x)
+container.sort(key = len)
+for j in container:
+    print(j)
+'''
+# Yuan to Baht
+'''
+cash = input("")
+x, useless = cash.split(" ")
+x = int(x)
+print(x*4, "Baht")
+'''
+
+# Throw that vowel away
+'''
+word = input("")
+word = word.split(" ")
+word = "".join(word)
+con_word = list(word)
+for k in con_word:
+    if k.isalpha() == False:
+        con_word.remove(k)
+vowel = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
+vowel_con = []
+newcon = []
+
+for i in con_word:
+
+    if i.isalpha():
+        if i in vowel:
+            vowel_con.append(i)
+        else:
+            newcon.append(i)
+ans_vowel = "".join(vowel_con)
+ans_cononant = "".join(newcon)
+print(ans_vowel)
+print(ans_cononant)
+'''
+# Lift
+'''
+floor = int(input(""))
+
+floordict = {
+    1 : "1st",
+    2 : "2nd",
+    3 : "3rd",
+    4 : "4th",
+    5 : "5th"
+}
+if floor <= 5:
+    print("OK! Wait please")
+    print("---------------")
+    print("Lift is arriving!")
+    print("---------------")
+    print("Lift is going up!")
+    print("---------------")
+    print("Lift has reached the", floordict[floor], "floor!")
+else:
+    print("Error! Not have this floor")
+'''
+
+# Three man down
+'''
+m = 3
+n = int(int(input(""))/3)
+
+for i in range(n):
+    for k in range(m):
+        print("|", end = "  ")
+'''
+
+# just simple calculation
+'''
+container = []
+for i in range(4):
+    value = input("")
+    value = value.split(" ")
+    for j in value:
+        if j.isnumeric():
+            container.append(j)
+
+container = list(map(int, container))
+
+a = container[0]
+b = container[1]
+print(a, "+", b, "=", a+b)
+print(a, "-", b, "=", a-b)
+print(a, "*", b, "=", a*b)
+print(a, "/", b, "=", "%1.2f" %(a/b))
+'''
+# run like P' Toon
+'''
+lap = int(input(""))
+lenght = int(input(""))
+ans = 0
+for i in range(lap):
+    print(str(i+1)+"-"+str(lenght))
+    ans += lenght
+print(ans)
+'''
+# Maltiplication table
+'''
+x = int(input(""))
+ans = 0
+for i in range(1, 13):
+    print(x, "x", i, "=", x*i)
+    ans += x*(i)
+ans = "%.2f" % ans
+if len(str(ans)) > 6:
+    ans = list(str(ans))
+    ans.insert(1, ",")
+    ans = "".join(ans)
+    print("รวม :", ans)
+else:
+    print("รวม :", ans)
+'''
+
+#Hangman?????
+'''
+inp = str(input(""))
+inpup = inp.upper()
+def replacer(s, newstring, index, nofail=False):
+    # raise an error if index is outside of the string
+    if not nofail and index not in range(len(s)):
+        raise ValueError("index outside given string")
+
+    # if not erroring, but the index is still not in the correct range..
+    if index < 0:  # add it to the beginning
+        return newstring + s
+    if index > len(s):  # add it to the end
+        return s + newstring
+
+    # insert the new string between "slices" of the original
+    return s[:index] + newstring + s[index + 1:]
+
+guesscount = 3
+guess = "EASY"
+x = list(guess)
+under = "____"
+#if inpup in x:
+wordindex = x.index(inpup)
+print(wordindex)
+if inpup in guess:
+  print("Yes")
+  replacer(under, inpup, wordindex)
+  print(under)
+else:
+  guesscount -= 1
+  print("No")
+  print("Guess count left =", guesscount)
+'''
+
+#Basic hangman
+'''
+x = input("")
+x = x.upper()
+word = ["E", "A", "S", "Y"]
+guess = ["_", "_", "_", "_"]
+if x in word:
+    print("Yes")
+    guess.remove("_")
+    guess.insert(word.index(x), x)
+    guess = " ".join(guess)
+    print(guess)
+else:
+    print("No")
+    print("Guess count left = 2")
+'''
+
+#check you luck
+'''
+container = []
+lucky_num = ["8", "14", "112", "76", "2"]
+counter = 0
+for i in range(5):
+    inp = input("")
+    container.append(inp)
+
+for j in container:
+    if j == "08":
+        counter +=1
+    if j in lucky_num:
+        counter += 1
+
+if counter >= 3:
+    print("You are lucky")
+else:
+    print("You are unlucky")
+'''
+
+# Diamond
+'''
+inp = input()
+height , space = inp.split(" ")
+height = int(height)
+space = int(space)
+new_space = space
+half_height = int(height/2)
+differ = half_height - space
+for i in range(half_height):
+    for j in range(new_space):
+        print("-", end="")
+
+    for j in range(height - (new_space*2)):
+        print("*", end = "")
+
+    for j in range(new_space):
+        print("-", end="")
+    if new_space != 0:
+        new_space -=1
+    else:
+        pass
+    print("\r")
+
+for i in range(differ):
+    for j in range(height):
+        print("*", end = "")
+    print("\r")
+new_space = 1
+for i in range(0, space , 1):
+
+    for j in range(new_space):
+        print("-", end="")
+
+    for j in range(height - ((i+1)*2)):
+        print("*", end = "")
+
+
+    for j in range(new_space):
+        print("-", end="")
+    new_space+= 1
+    print("\r")
+'''
+#Factor
+'''
+inp = int(input(""))
+x = 2
+while inp != 1:
+    while inp % x == 0:
+        print(x, "\r")
+        inp = inp/x
+    x += 1
+'''
+
+#Stair
+'''
+inp = int(input(""))
+space = inp*3
+
+for i in range(inp+1):
+    for j in range(space):
+        print(end= " ")
+    if i == 0:
+        print("__")
+        #print("\r")
+    else:
+        print("__|", end = "")
+        print("\r")
+
+    space -= 3
+
+'''
+
+# Chanikarn time table
+'''
+inp = input("")
+container = inp.split(",")
+todo_list = ["เรียนคณิตศาสตร์online",
+    "เรียนอังกฤษonline",
+    "เรียนไทยonline",
+    "เรียนวิทย์online",
+    "อ่านเตรียมสอบ o-net",
+    "ทำงานบ้าน",
+    "เรียนวาดรูป",
+    "เรียนร้องเพลง"
+    ]
+for i in container:
+    if i in container:
+        todo_list.remove(i)
+print("ยังเหลือสิ่งที่ต้องทำอีก", len(todo_list), "อย่าง")
+for j in todo_list:
+    print("-", j)
+'''
+
+#Pythagoras
+'''
+x = int(input(""))
+y = int(input(""))
+ans = (x**2 + y**2)**(1/2)
+if ans - int(ans) == 0:
+    print(int(ans))
+else:
+    ans = "%.2f" %ans
+    print(ans)
+
+'''
+
+#Bottle exchange
+'''
+inp = int(input(""))
+bottle = inp
+x = int(inp /3)
+bottle += x
+bottle_left1 = inp - int(x*3)
+y = int(x /3)
+bottle += y
+bottle_left2 = x - (y*3)
+bottle_left3 = int((y + bottle_left2)/3)
+bottle += bottle_left3
+last = int((bottle_left1 + bottle_left3)/3)
+bottle += last
+print(bottle)
+'''
+
+# kala tax
+'''
+ppl = int(input(""))
+container = []
+total = 0
+for i in range(ppl):
+    x = int(input(""))
+    container.append(x)
+
+for i in container:
+    if 0 < i <= 100000:
+        i = 0
+    elif 100001 < i <= 300000:
+        i = i * (1/10)
+    elif 300001 < i <= 500000:
+        i = i * (15/100)
+    elif 500001 < i <= 1000000:
+        i = i * (1/5)
+    elif i > 1000000 :
+        i = i * (1/4)
+    total += i
+if total != 0:
+    print("เสียภาษีทั้งหมด", int(total), "กะลา")
+else:
+    print("ไม่ต้องเสียภาษี")
+'''
+
+#binary search
+'''
+def binary(arr, l, r, x):
+
+    while l <= r:
+
+        mid = l + (r - l) // 2;
+
+        if arr[mid] == x:
+            return mid
+
+        elif arr[mid] < x:
+            l = mid + 1
+
+        else:
+            r = mid - 1
+
+    return -1
+
+inp = int(input(""))
+num_list = [1,2,3,5,7,9,11,13,15,17,19,21,23,25,27,29]
+
+result = binary(num_list, 0, len(num_list)-1, inp)
+
+print(result)
+'''
+
+# Clothes code
+'''
+category = {
+    1 : "underwear - 20",
+    2 : "pants - 30",
+    3 : "skirt - 30",
+    4 : "shirt - 40",
+    5 : "blouse - 40"
+}
+
+size = {
+    1 : "S - 5",
+    2 : "M - 10",
+    3 : "L - 15",
+    4 : "Xl - 20" ,
+    5 : "XXL - 25"
+}
+color = {
+    "R" : "red - 15",
+    'B' : "blue - 15",
+    "W" : "white - 10",
+    "G" : "green - 15",
+    "BK" : "black - 5"
+}
+typee = {
+    1 : "cotton - 20" ,
+    2 : "nylon - 15" ,
+    3 : "spandex - 25" ,
+    4 : "wool - 30" ,
+    5 : "linen - 25"
+}
+
+
+inp_cata = int(input(""))
+inp_size = int(input(""))
+inp_color = input("")
+inp_type = int(input(""))
+inp_amount = int(input(""))
+
+store = [category, size, color, typee]
+price = [inp_cata, inp_size, inp_color, inp_type]
+counter = 0
+total_price = 0
+for j in store:
+    x = j[price[counter]].split(" - ") # category[inp_cata]
+    total_price += int(x[1])
+    counter+= 1
+last_ans = total_price*inp_amount
+
+print(category[inp_cata])
+print("size", size[inp_size])
+print("color", color[inp_color])
+print(typee[inp_type])
+print("amount -", inp_amount)
+print("cost -", str(total_price)+"*"+str(inp_amount), "=", last_ans)
+'''
+
+# max_num
+'''
+inp = input("")
+inp = inp.replace("[", "")
+inp = inp.replace("]", "")
+inp = inp.split(", ")
+inp = list(map(int, inp))
+inp.sort()
+print(inp[-1])
+'''
+
+#factor v.2
+'''
+inp = int(input(""))
+x = 2
+container = [] # container = [2, 2, 2]
+num_con = []
+num_count = []
+counter = 0
+ans = []
+while inp!= 1:
+    while inp % x == 0:
+
+        inp = inp/x
+        container.append(x)
+    x += 1
+
+for num in [ele for ind, ele in enumerate(container,1) if ele not in container[ind:]]:
+    num_con.append(num)
+    num_count.append(container.count(num))
+    #print("{} {}".format(num,container.count(num)))
+
+for i in num_count:
+    if i == 1:
+        ans.append(num_con[counter])
+        counter +=1
+    else:
+        ans.append("{}^{}".format(num_con[counter],i))
+        counter +=1
+ans = list(map(str, ans))
+ans = " * ".join(ans)
+print(ans)
+'''
+
